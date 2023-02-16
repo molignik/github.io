@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дата и время</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="content">
+
+  <h1 id="main-title">Это просто дата и время!</h1>
+
+  <p id="par">
+    <script>
+      var date = new Date();
+      var d  = date.getDate();
+      var day = (d < 10) ? '0' + d : d;
+      var m = date.getMonth() + 1;
+      var month = (m < 10) ? '0' + m : m;
+      var yy = date.getYear();
+      var year = (yy < 1000) ? yy + 1900 : yy;
+      document.write(day + "." + month + "." + year +" г.");
+    </script>
+    <script>           
+    setInterval(function() {
+      var cd = new Date();
+      var clockdat = document.getElementById("clockdat");
+      clockdat.innerHTML = cd.toLocaleTimeString();
+    }, 1000);
+    </script>
+  </p>
+
+  <p id="par"><span id="idClock"></span></p>
+
+   <script>
+   
+   function clock()
+   {
+     var tekDate = new Date();
+     var hour = tekDate.getHours();
+     var minute = tekDate.getMinutes();
+     var seconds = tekDate.getSeconds();
+     minute=((minute < 10) ? "0" : "") + minute;
+     seconds =((seconds < 10) ? "0" : "") + seconds;
+     hour=(hour > 24) ? hour-24 : hour;
+     hour=(hour == 0) ? 0 : hour;
+     var clock = hour + ":" + minute + ":" + seconds;
+     if(clock != document.getElementById('idClock').innerHTML){ 
+    document.getElementById('idClock').innerHTML = clock;
+        }
+     timer = setTimeout("clock()",1000);
+   }
+   clock();
+   
+   </script>
+
+</body>
+</html>

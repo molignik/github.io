@@ -1,0 +1,22 @@
+#main-title {
+  color: rgba(30, 3, 6, 0.734);
+  font-size: 60px;
+  text-align: center;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.content {
+  background-color: rgb(231, 240, 239);
+}
+
+#par {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 100px;
+} 
+
+#idClock {
+  font-size: 40px;
+  text-align: center;
+}
